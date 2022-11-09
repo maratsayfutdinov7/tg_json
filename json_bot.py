@@ -7,8 +7,6 @@ import json
 
 bot = TeleBot(token='5790837079:AAGQU2HTvUDtDAk3HSJyrsSh7pDAK30W-2g', parse_mode='html') 
 
-
-
 @bot.message_handler(commands=['start'])
 def start_command_handler(message: types.Message):
     
@@ -16,7 +14,6 @@ def start_command_handler(message: types.Message):
         chat_id=message.chat.id, 
         text='Привет! Я умею проверять JSON и форматировать его в красивый текст\nВведи JSON в виде строки:', 
     )
-
 
 @bot.message_handler()
 def message_handler(message: types.Message):
@@ -39,12 +36,9 @@ def message_handler(message: types.Message):
         text=f'JSON:\n<code>{text}</code>'
     )
 
-
-
 def main():
     
     bot.infinity_polling()
-
 
 if __name__ == '__main__':
     main()
